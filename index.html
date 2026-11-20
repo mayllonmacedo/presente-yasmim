@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10091f">
+<title>Yasmim, meu universo 💜</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --pink: #ff9dce;
+  --lav: #c9a8ff;
+  --blue: #8bcfff;
+  --white: #fff8ff;
+  --muted: #d7c9e9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  background: #10091f;
+  overflow-x: hidden;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(ellipse at 12% 12%, #63338b88, transparent 38%),
+    radial-gradient(ellipse at 88% 35%, #17668a66, transparent 40%),
+    radial-gradient(ellipse at 50% 100%, #53235e66, transparent 42%),
+    linear-gradient(145deg, #10091f, #17102e 55%, #081a2c);
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    radial-gradient(#fff 1px, transparent 1.5px),
+    radial-gradient(#cbaaff 1px, transparent 1.5px),
+    radial-gradient(#8bcfff 1px, transparent 1.5px);
+  background-size: 93px 93px, 137px 137px, 181px 181px;
+  background-position: 0 0, 40px 60px, 90px 20px;
+  opacity: .38;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  to {
+    opacity: .7;
+    filter: drop-shadow(0 0 4px #c9a8ff);
+  }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding: 15px 8px;
+  background: #10091fbd;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #ffffff16;
+}
+
+nav a {
+  color: #eee1ff;
+  text-decoration: none;
+  font-size: .82rem;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: var(--pink);
+}
+
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 100px 22px;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-top: 115px;
+}
+
+.eyebrow {
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-size: .7rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(3.5rem, 11vw, 7.5rem);
+  line-height: .98;
+  margin: 22px 0;
+  background: linear-gradient(100deg, #fff, var(--pink), var(--lav), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 50px #c9a8ff18;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.heart {
+  font-size: 2.3rem;
+  color: var(--pink);
+  display: inline-block;
+  animation: pulse 1.6s infinite;
+  filter: drop-shadow(0 0 14px #ff9dce99);
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #e6caff88;
+  color: white;
+  text-decoration: none;
+  padding: 13px 23px;
+  border-radius: 999px;
+  background: linear-gradient(100deg, #9b58be66, #4388b866);
+  box-shadow: 0 0 35px #b77cff22;
+  cursor: pointer;
+  font: inherit;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 38px #c99cff55;
+}
+
+h2 {
+  font-size: clamp(2.3rem, 6vw, 3.8rem);
+  text-align: center;
+  margin: 0 0 15px;
+  background: linear-gradient(90deg, #fff, var(--pink), var(--lav));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sub {
+  text-align: center;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 auto 36px;
+  max-width: 690px;
+}
+
+.panel {
+  background: linear-gradient(145deg, #ffffff12, #ffffff07);
+  border: 1px solid #ffffff20;
+  border-radius: 27px;
+  padding: clamp(22px, 5vw, 46px);
+  box-shadow: 0 22px 90px #0004;
+  backdrop-filter: blur(12px);
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.unit {
+  padding: 19px 8px;
+  text-align: center;
+  border: 1px solid #d9baff30;
+  border-radius: 18px;
+  background: #ffffff09;
+}
+
+.unit strong {
+  display: block;
+  font-size: clamp(1.7rem, 5vw, 2.7rem);
+  font-family: 'Playfair Display', serif;
+  color: #f5d7ff;
+}
+
+.unit span {
+  font-size: .75rem;
+  color: var(--muted);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #f2e8ff;
+  white-space: pre-line;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.moment {
+  border-left: 2px solid #c9a8ff88;
+  padding: 3px 0 3px 20px;
+  position: relative;
+}
+
+.moment:before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 0 0 15px var(--pink);
+}
+
+.moment b {
+  color: #f4d9ff;
+}
+
+.moment p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.promise {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 2;
+}
+
+.ending {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  text-align: center;
+  color: #f5d9ff;
+  line-height: 1.5;
+}
+
+.secret {
+  display: none;
+  text-align: center;
+  margin-top: 22px;
+  padding: 25px;
+  border-radius: 20px;
+  background: #c9a8ff13;
+  border: 1px solid #d9baff44;
+  color: #fff0ff;
+  line-height: 1.8;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px 70px;
+  color: #b9a8d0;
+  font-size: .85rem;
+}
+
+.float-heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 30;
+  color: #ff9dce;
+  animation: rise 7s linear forwards;
+  text-shadow: 0 0 12px #ff9dce;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@media(max-width:650px) {
+  nav {
+    gap: 16px;
+  }
+
+  nav a {
+    font-size: .75rem;
+  }
+
+  .counter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .letter {
+    font-size: 1rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#tempo">Nossa história</a>
+  <a href="#carta">Carta</a>
+</nav>
+
+<section class="hero" id="inicio">
+  <div>
+    <div class="heart">♥</div>
+
+    <div class="eyebrow">
+      para a garota que ilumina meus dias
+    </div>
+
+    <h1>Feliz vida,<br>Yasmim.</h1>
+
+    <p>
+      Se eu pudesse transformar todo o amor que sinto por você em estrelas,
+      o céu ainda seria pequeno. Hoje é o seu dia, meu amor, e eu preparei
+      este cantinho do universo só pra você.
+    </p>
+
+    <a class="btn" href="#carta">Abra sua surpresa ✨</a>
+
+    <p style="font-size:.82rem;margin-top:24px;color:#c3b0dc">
+      Feito com amor por Mayllon 💜
+    </p>
+  </div>
+</section>
+
+<section id="tempo">
+
+  <h2>Desde que nossas histórias se encontraram</h2>
+
+  <p class="sub">
+    28 de agosto de 2026 — o começo de uma história que eu quero continuar
+    escrevendo com você.
+  </p>
+
+  <div class="panel">
+
+    <div class="eyebrow" style="text-align:center">
+      tempo desde 28.08.2026
+    </div>
+
+    <div class="counter">
+
+      <div class="unit">
+        <strong id="days">0</strong>
+        <span>Dias</span>
+      </div>
+
+      <div class="unit">
+        <strong id="hours">0</strong>
+        <span>Horas</span>
+      </div>
+
+      <div class="unit">
+        <strong id="minutes">0</strong>
+        <span>Minutos</span>
+      </div>
+
+      <div class="unit">
+        <strong id="seconds">0</strong>
+        <span>Segundos</span>
+      </div>
+
+    </div>
+
+    <p class="sub" style="margin:22px auto 0">
+      E ainda é só o começo. Que a gente tenha muito tempo,
+      muitos sonhos e milhares de lembranças pela frente. ♡
+    </p>
+
+  </div>
+</section>
+
+<section id="carta">
+
+  <h2>Uma carta do meu coração</h2>
+
+  <p class="sub">
+    Leia sem pressa. Cada palavra aqui tem um pouquinho de mim e muito de você.
+  </p>
+
+  <div class="panel letter">
+Minha Yasmim,
+
+Feliz aniversário, meu amor! ❤️
+
+Hoje é o seu dia, mas quem sente que ganhou um presente sou eu. Afinal, em meio a tantas pessoas nesse mundo enorme, a vida me permitiu encontrar você. E eu queria que, por alguns minutos, você pudesse enxergar o tamanho do carinho que existe aqui dentro.
+
+Eu fico pensando em como algumas coisas bonitas acontecem sem a gente planejar. Uma conversa vira costume, o costume vira saudade, a saudade vira vontade de estar perto… e, quando percebemos, aquela pessoa já ocupa um espaço que ninguém mais conseguiria ocupar. Você se tornou uma das partes mais bonitas dos meus dias.
+
+Eu amo o seu jeitinho. Amo seu sorriso, sua voz, suas manias, suas brincadeiras e até aquelas pequenas coisas que talvez você nem perceba que faz. Amo quando a gente conversa sobre qualquer assunto e quando não precisa de assunto nenhum para simplesmente gostar de estar junto. Amo lembrar dos nossos momentos e perceber que, mesmo os mais simples, ficam guardados em mim com um carinho enorme.
+
+Queria que você soubesse que não precisa ser forte o tempo inteiro, nem estar sorrindo todos os dias, nem fingir que está tudo bem quando não estiver. Quero ser alguém com quem você possa dividir as alegrias, mas também os medos, as dúvidas e os dias difíceis. Quero te ouvir, te acolher, respeitar seu tempo e aprender todos os dias a amar você da maneira que merece.
+
+Eu não sou perfeito, meu amor. Vou errar, vou ter coisas para aprender e, às vezes, talvez não encontre de primeira as palavras certas. Mas existe uma coisa que quero fazer sempre: cuidar de nós. Conversar quando algo não estiver bem, comemorar suas conquistas como se fossem minhas e nunca deixar que você esqueça o quanto é importante.
+
+Neste novo ciclo, eu desejo que seus sonhos encontrem caminhos, que seu coração tenha paz e que a vida te surpreenda com coisas lindas. Desejo saúde, proteção, coragem, oportunidades, gargalhadas inesperadas, abraços apertados e motivos sinceros para se orgulhar de si mesma. Que você nunca diminua sua luz para caber em lugar nenhum. Você merece florescer, ser feliz e viver tudo aquilo que faz seus olhos brilharem.
+
+Obrigado por me deixar conhecer tantas partes suas. Obrigado por cada mensagem, cada carinho, cada risada e cada instante que virou memória. Eu quero continuar descobrindo o mundo ao seu lado. Quero viver dias comuns que se tornam especiais só porque você está neles. Quero conhecer lugares com você, fazer planos, realizar sonhos, tirar fotos bobas, guardar lembranças e comemorar muitos outros aniversários.
+
+Se eu pudesse te entregar um presente que não coubesse em uma caixa, seria a chance de se olhar pelos meus olhos. Você veria uma garota incrível, cheia de detalhes que encantam, alguém que merece ser amada com cuidado e verdade. Veria o quanto seu sorriso muda o clima do meu dia e o quanto sua presença significa para mim.
+
+E quando você terminar de ler, espero que fique com uma certeza: você é muito especial. Não só hoje, porque é seu aniversário, mas em todos os dias. Não apenas quando tudo está bonito e fácil, mas também nos dias em que a vida pesa um pouquinho. Eu torço por você, acredito em você e quero ver você conquistando o mundo do seu jeito.
+
+Feliz aniversário, minha menina. Que esse novo capítulo seja leve, lindo e cheio de motivos para sorrir. Que nunca faltem amor, paz e pessoas que cuidem de você. E que eu tenha a sorte de estar pertinho para aplaudir cada nova conquista.
+
+Eu te amo muito. Obrigado por ser você e por fazer parte da minha vida.
+
+Com todo o amor do mundo,
+Mayllon. ❤️
+  </div>
+</section>
+
+<section>
+
+  <div class="panel">
+
+    <p class="promise">
+      E se um dia você esquecer o quanto é especial, volte aqui.
+      Este cantinho vai continuar dizendo, em cada detalhe,
+      que existe alguém que é muito feliz por ter você na vida.
+    </p>
+
+    <div class="ending">
+      Você é meu pedacinho favorito do universo. 💜
+    </div>
+
+    <div style="text-align:center;margin-top:28px">
+
+      <button class="btn"
+        onclick="document.getElementById('secret').style.display='block';this.style.display='none'">
+        Tem mais uma coisinha… 💌
+      </button>
+
+    </div>
+
+    <div class="secret" id="secret">
+      Se eu pudesse escolher de novo, entre todos os caminhos,
+      ainda escolheria aquele que me levou até você.
+      Feliz aniversário, meu amor. Eu te amo! ❤️
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  Feito à mão, com amor e um tantão de carinho.
+  <br>
+  De Mayllon para Yasmim • 28.08.2026 ♡
+</footer>
+
+<script>
+
+// CONTADOR DO TEMPO JUNTOS
+
+const start = new Date(2026, 7, 28, 0, 0, 0);
+
+function updateCounter() {
+
+  let diff = Math.max(0, Date.now() - start.getTime());
+
+  const d = Math.floor(diff / 86400000);
+  diff %= 86400000;
+
+  const h = Math.floor(diff / 3600000);
+  diff %= 3600000;
+
+  const m = Math.floor(diff / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+
+  document.getElementById('days').textContent = d;
+  document.getElementById('hours').textContent = h;
+  document.getElementById('minutes').textContent = m;
+  document.getElementById('seconds').textContent = s;
+
+}
+
+updateCounter();
+setInterval(updateCounter, 1000);
+
+
+// CORAÇÕES FLUTUANDO
+
+setInterval(() => {
+
+  const el = document.createElement('div');
+
+  el.className = 'float-heart';
+  el.textContent = Math.random() > .5 ? '♥' : '♡';
+
+  el.style.left = Math.random() * 100 + 'vw';
+  el.style.fontSize = (14 + Math.random() * 20) + 'px';
+
+  document.body.appendChild(el);
+
+  setTimeout(() => el.remove(), 7100);
+
+}, 900);
+
+</script>
+
+</body>
+</html>
